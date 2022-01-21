@@ -1,0 +1,12 @@
+.container{
+    background-color: rgb(241, 236, 228);
+    
+}
+
+div#con {
+    width: 500px;
+    
+    
+    margin-left: 400px;
+    margin-right: 100px;
+}

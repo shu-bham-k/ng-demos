@@ -1,0 +1,100 @@
+<div class="container"  >
+  <h2>Registration Form</h2>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" id="con">
+   
+    <div class="form-group">
+      <label>
+        Username
+      </label>
+      <input [class.is-invalid]="userName?.invalid 
+      && userName?.touched" 
+      formControlName="userName" type="text" class="form-control" placeholder="ENTER YOUR USERNAME">
+
+      <div *ngIf="userName?.touched && userName?.invalid">
+        <small class="text-danger" *ngIf="userName?.errors?.['required']">
+            Name is required!
+        </small>
+        <small class="text-danger" *ngIf="userName?.errors?.['minlength']">
+          Username must have 3 characters!
+      </small>
+      <small class="text-danger" *ngIf="userName?.errors?.['forbiddenName']">
+        {{userName?.errors?.['forbiddenName'].value}} Username not allowed
+    </small>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text"
+      [class.is-invalid]="email?.invalid && email?.touched"
+      formControlName="email" class="form-control" placeholder="ENTER YOUR EMAIL">
+      <small class="text-danger" [class.d-none]="email?.valid || email?.untouched">
+       Email is required
+    </small>
+    </div>
+
+    <div class="form-check mb-3">
+      <input class="form-check-input" formControlName="subscribe" type="checkbox">
+      <label class="form-check-label">
+        send me a promotional offers
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input formControlName="password" type="password" class="form-control" placeholder="ENTER YOUR PASSWORD">
+    </div>
+
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input  [class.is-invalid]="registrationForm?.errors?.['misMatch']"
+      formControlName="confirmPassword" type="password" class="form-control" placeholder="ENTER YOUR PASSWORD AGAIN">
+      <small class="text-danger" *ngIf="registrationForm?.errors?.['misMatch']">
+        password is not same
+      </small>
+    </div>
+
+    <div class="mb-1">
+      <label for="formFile" class="form-label">Upload Image</label>
+      <input class="form-control" formControlName="image" type="file" id="formFile">
+    </div>
+
+    <div class="form-group"> 
+      <label class="control-label" for="date">Date</label>
+      <input class="form-control" id="date"  formControlName="date" placeholder="MM/DD/YYY" type="date"/>
+    </div>
+
+    <div formGroupName="address">
+      <div class="form-group">
+        <label>
+          city
+        </label>
+        <input formControlName="city" type="text" class="form-control" placeholder="ENTER YOUR CITY">
+      </div>
+    
+      <div class="form-group">
+        <label>
+          State
+        </label>
+        <input formControlName="state" type="text" class="form-control" placeholder="ENTER YOUR STATE">
+      </div>
+
+      <div class="form-group">
+        <label>
+          Postal Code
+        </label>
+        <input formControlName="postalCode" type="text" class="form-control" placeholder="ENTER YOUR POSTAL CODE">
+      </div>
+
+
+    </div> 
+
+    <button  class="btn btn-primary" [disabled]="!registrationForm?.valid"  type="submit">Register</button>
+  </form>
+
+{{registrationForm.value | json}}
+
+</div>
+
+
