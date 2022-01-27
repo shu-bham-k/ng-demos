@@ -8,5 +8,5 @@
 7. Tour-of-heros app - tutorial from angular documentation
 8. api- This project about fetching mock api using http client and services
 9. navbar(task) = simple bootstrap with logo and dropdown
-
+10. Module demo = simple code about how to create and use different angular module
 We can all run the projects by using CLI commands =  ng serve
