@@ -20,7 +20,7 @@ export class HeroDetailComponentComponent implements OnInit {
   ) { 
     
   }
-
+  name!: any
   ngOnInit(): void {
     this.getHero();
   }
@@ -35,6 +35,9 @@ export class HeroDetailComponentComponent implements OnInit {
   }
 
   save(): void {
+    this.name= this.hero;
+   this.name = this.name.trim()
+   if (!this.name) { return; }
   if (this.hero) {
     this.heroService.updateHero(this.hero)
       .subscribe(() => this.goBack());

@@ -15,12 +15,16 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     
-this.postData.getPosts().subscribe((result: any)=> {
-  console.log("result",result)
-  this.data= result
-})
+this.showPosts();
+
 
   }
   constructor (private postData:ConfigService) {}
-  
+  showPosts(){
+    
+    this.postData.getPosts().subscribe((result: any)=> {
+      console.log("result",result)
+      this.data= result
+    })
+  }
 }
