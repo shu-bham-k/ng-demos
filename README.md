@@ -6,6 +6,7 @@
 5. Template-driven-Form -  basic template driven form
 6. Todo -  simple todo list app to add data and remove data from text field
 7. Tour-of-heros app - tutorial from angular documentation
-
+8. api- This project about fetching mock api using http client and services
+9. navbar(task) = simple bootstrap with logo and dropdown
 
 We can all run the projects by using CLI commands =  ng serve
