@@ -1,0 +1,96 @@
+
+<div class="container"  >
+    
+    <form [formGroup]="userDetail" >
+     
+      <div class="form-group">
+        <label>
+          Name:
+        </label>
+        <input [class.is-invalid]="userName?.invalid 
+        && ( userName?.dirty || userName?.touched )" 
+        formControlName="userName" type="text" class="form-control" placeholder="ENTER NAME">
+  
+        <div *ngIf=" ( userName?.dirty || userName?.touched ) && userName?.invalid">
+          <small class="text-danger" *ngIf="userName?.errors?.['required']">
+              Name is required!
+          </small>
+          <small class="text-danger" *ngIf="userName?.errors?.['pattern']">
+            No white spaces allowed.
+        </small>
+          </div>
+  
+      </div>
+  
+      <!-- <div class="form-group">
+        <label>Email:</label>
+        <input type="email"
+        [class.is-invalid]="email?.invalid && (email?.dirty || email?.touched)"
+        formControlName="email" class="form-control" placeholder="ENTER EMAIL">
+        <div *ngIf=" ( email?.dirty || email?.touched ) && email?.invalid">
+        <small class="text-danger" *ngIf="email?.errors?.['pattern']">
+         There should be an email 
+      </small>
+    </div>
+      </div>
+   -->
+
+   <div class="form-group">
+    <label>Email:</label>
+    <input [class.is-invalid]="email?.invalid && (email?.dirty || email?.touched)"
+     formControlName="email" type="email" class="form-control" placeholder="ENTER EMAIL">
+     <div *ngIf="email?.invalid && (email?.touched || email?.dirty)">
+        <small class="text-danger" *ngIf="email?.errors?.['required']">
+         email is required
+          </small>
+     <small class="text-danger" *ngIf="email?.errors?.['pattern']">
+       There should an email
+     </small>
+    </div>
+  </div>
+   
+  
+      <div class="form-group">
+        <label>Password :</label>
+        <input [class.is-invalid]="password?.invalid && (password?.touched || password?.dirty)"
+         formControlName="password" type="password" class="form-control" placeholder="ENTER PASSWORD">
+         <div *ngIf="password?.invalid && (password?.touched || password?.dirty)">
+         <small class="text-danger" *ngIf="password?.errors?.['pattern']">
+            Password should be at least 8 characters long and should contain one number,one character and one special character
+         </small>
+        </div>
+      </div>
+  
+     
+      <div class="form-group">
+        <label>Phone :</label>
+        <input [class.is-invalid]="phone?.invalid 
+        && ( phone?.dirty || phone?.touched )"  
+        formControlName="phone" type="number" class="form-control" placeholder="ENTER PHONE">
+
+        <div *ngIf="phone?.invalid && ( phone?.dirty || phone?.touched )">
+            <small class="text-danger" *ngIf=" phone?.errors?.['required']">
+                phone no. is required!
+            </small>
+            
+          <small class="text-danger" *ngIf=" phone?.errors?.['pattern']">
+            Phone No. must  consist 10 digits!
+        </small>
+            </div>
+      </div>
+ 
+   
+  
+      
+  
+      
+  
+      <button  class="btn btn-primary" [disabled]="userDetail?.invalid"   type="submit">submit</button>
+    </form>
+  
+  {{userDetail.value | json}}
+  
+  </div>
+  
+  
+  
