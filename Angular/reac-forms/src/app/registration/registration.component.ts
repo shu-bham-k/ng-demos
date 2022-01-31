@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PasswordValidator } from 'src/app/shared/password.validator';
 import { forbiddenNameValidator } from 'src/app/shared/user-name.validator';
-
+import { FormArray } from '@angular/forms';
 import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -39,7 +39,10 @@ export class RegistrationComponent implements OnInit {
         city: ['',Validators.required],
         state:['',Validators.required],
         postalCode:['',Validators.required]
-      })
+      }),
+      aliases: this.fb.array([
+        this.fb.control('')
+      ])
     },{validator: PasswordValidator});
 
     this.registrationForm.get('subscribe')?.valueChanges
@@ -55,6 +58,14 @@ export class RegistrationComponent implements OnInit {
       
   }
 
+  get aliases() {
+    return this.registrationForm.get('aliases') as FormArray;
+  }
+
+  addAlias() {
+    this.aliases.push(this.fb.control(''));
+  }
+
   onSubmit(){
     console.log(this.registrationForm.value);
    // this._registrationService.register(this.registrationForm.value)
@@ -67,6 +78,16 @@ export class RegistrationComponent implements OnInit {
          queryParams:{data:JSON.stringify(data)}
        })
  }
+
+ updateProfile() {
+  this.registrationForm.patchValue({
+    userName: 'Nancy',
+    address: {
+      city: '123 Drew Street',
+      state: 'newyork'
+    }
+  });
+}
 
 
 }

@@ -31,9 +31,9 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit() {
     this.userDetail = this.fb.group({
-      userName: ['', [Validators.required,Validators.pattern('^[a-zA-Z0-9_-]{0,}$') ]],
-      email:['',[Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"),Validators.required]],
-      password: ['',Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/)],
+      userName: ['', [Validators.required,Validators.pattern('^([A-Za-z]+ )+[A-Za-z]+$|^[A-Za-z]+$') ]],
+      email:['',[Validators.pattern(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]+$/),Validators.required]],
+      password: ['',Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8}$/)],
       phone: ['',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
      
     })

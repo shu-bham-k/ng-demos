@@ -18,7 +18,7 @@
           Username must have 3 characters!
       </small>
       <small class="text-danger" *ngIf="userName?.errors?.['forbiddenName']">
-        {{userName?.errors?.['forbiddenName'].value}} Username not allowed
+        {{userName?.errors?.['forbiddenName'].value}} Username is not allowed
     </small>
         </div>
 
@@ -90,8 +90,23 @@
 
     </div> 
 
+    <div formArrayName="aliases">
+      <h2>Aliases</h2>
+      <button (click)="addAlias()" class="btn btn-outline-secondary"  type="button">+ Add another alias</button>
+     
+    
+      <div *ngFor="let alias of aliases.controls; let i=index" style="margin-top: 5px; margin-bottom: 5px;">
+       
+        <label for="alias-{{ i }}">Alias:</label>
+        <input id="alias-{{ i }}" type="text" class="form-control" [formControlName]="i">
+      </div>
+    </div>
+
     <button  class="btn btn-primary" [disabled]="!registrationForm?.valid"  type="submit">Register</button>
+
+    
   </form>
+  <button class="btn btn-primary"  (click)="updateProfile()" style="margin-top: 9px;">Update Profile</button>
 
 {{registrationForm.value | json}}
 
