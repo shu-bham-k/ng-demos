@@ -12,6 +12,7 @@ export class UserDetailComponent implements OnInit {
   userDetail!: FormGroup;
   constructor(private fb: FormBuilder) { }
 
+  // function for getting field names from userDetail
   get userName(){
     return this.userDetail.get('userName');
   }
@@ -28,7 +29,7 @@ export class UserDetailComponent implements OnInit {
     return this.userDetail.get('phone')
   }
 
-
+//regex refernce from stackoverflow.com
   ngOnInit() {
     this.userDetail = this.fb.group({
       userName: ['', [Validators.required,Validators.pattern('^([A-Za-z]+ )+[A-Za-z]+$|^[A-Za-z]+$') ]],
@@ -38,5 +39,11 @@ export class UserDetailComponent implements OnInit {
      
     })
   }
+
+  onSubmit(){
+    console.log(this.userDetail.value);
+
+  }
+  
 
 }

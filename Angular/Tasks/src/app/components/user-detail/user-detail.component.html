@@ -1,7 +1,7 @@
 
 <div class="container"  >
     
-    <form [formGroup]="userDetail" >
+    <form [formGroup]="userDetail" (ngSubmit)="onSubmit()" >
      
       <div class="form-group">
         <label>

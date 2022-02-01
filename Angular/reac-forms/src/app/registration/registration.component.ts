@@ -14,8 +14,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 export class RegistrationComponent implements OnInit {
 
   registrationForm!: FormGroup;
- 
-
+ // function for taking field names from registration form.
   get userName(){
     return this.registrationForm.get('userName');
   }
