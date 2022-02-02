@@ -4,7 +4,8 @@ table {
 
 .center{
     margin: 10px;
-    padding: 10px;
+    padding: 40px;
+    
 }
 
 .mat-row .mat-cell {
@@ -20,3 +21,9 @@ table {
   .demo-row-is-clicked {
     font-weight: bold;
 }
+.mat-column-symbol {
+  
+  text-align: center;
+  
+}
+ 

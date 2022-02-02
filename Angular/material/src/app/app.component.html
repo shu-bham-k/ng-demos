@@ -7,7 +7,7 @@
   
 
 
-  <div class="mat-elevation-z8">
+   <div class="mat-elevation-z8"> 
     <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
       <!-- Position Column -->
       <ng-container matColumnDef="position">
@@ -45,12 +45,14 @@
     </mat-table>
 
      
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
-    </mat-paginator>
+    
   </div>
-</div>
+  
+ </div>
+ <mat-paginator [pageSizeOptions]="[7, 14]" showFirstLastButtons aria-label="Select page of periodic elements">
+</mat-paginator>
 
-<div>
+<!-- <div>
   <h3>
     Click Log
   </h3>
@@ -64,4 +66,4 @@
   <li *ngFor="let clickedRow of clickedRows">
     Clicked on {{clickedRow.name}}
   </li>
-</ul>
+</ul> -->
