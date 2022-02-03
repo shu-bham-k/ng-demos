@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    <header>
+        <h1>Introduction to HTML & CSS</h1>
+    </header>
+    <div id="container">
+        <article>
+            <section class=postHead>
+                <h2>Html forms</h2>
+                <small>posted on <time datetime="02-02-2022">2 feb 2022</time> </small>
+            </section>
+
+            <section class=postBody>
+                <p>The form element is a container for different types of input elements, such as: text fields,
+                    checkboxes,
+                    radio buttons, submit buttons, etc.</p>
+                <div id="form">
+                    <form>
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="australia">India</option>
+                            <option value="canada">Brazil</option>
+                            <option value="usa">USA</option>
+                        </select>
+                        <p>Choose your vehicle:</p>
+                        <input type="checkbox" id="vehicle" name="vehicle" value="Bike">
+                        <label for="vehicle"> I have a bike</label><br>
+                        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                        <label for="vehicle2"> I have a car</label><br>
+                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                        <label for="vehicle3"> I have a boat</label>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div> <!-- form div end-->
+            </section>
+
+            <section class="postFoot">
+                <p>Reference by W3 School</p>
+
+                <p>Written by Shubham</p>
+            </section>
+        </article>
+        <!--1st article ends-->
+        <article>
+            <section class="postHead">
+                <h2>CSS floats</h2>
+                <small>posted on <time datetime="02-02-2022">2 feb 2022</time> </small>
+            </section>
+
+            <section class="postBody clearfix">
+
+                <img src="s.png" alt="Boy in a over-sized Shirt">
+                <p id="type">Stimulate your mind as you test your typing speed with this standard English paragraph
+                    typing test.
+                    Watch your typing speed and accuracy increase as you learn about a variety of new topics! Over 40
+                    typing test selections available.
+
+                    If you don't like a test prompt, you can get a different (random) prompt with the "change test"
+                    button - or select a specific paragraph to type from the list below. To find out how fast you type,
+                    just start typing in the blank textbox on the right of the test prompt. You will see your progress,
+                    including errors on the left side as you type. In order to complete the test and save your score,
+                    you need to get 100% accuracy. You can fix errors as you go, or correct them at the end with the
+                    help of the spell checker.</p>
+
+
+
+            </section>
+
+            <section class="postFoot">
+
+                <p>Written by Shubham</p>
+            </section>
+        </article> <!-- 2nd article ends-->
+
+        <footer>
+            <p>&copy; 2022 &bull;Shubham</p>
+
+        </footer>
+    </div>
+    <!--conatiner ends-->
+</body>
+
+</html>
