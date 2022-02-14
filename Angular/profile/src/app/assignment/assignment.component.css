@@ -1,0 +1,19 @@
+.card{
+    width: 368px;
+    
+    margin-left: 25px;
+    margin-top: -30px;
+}
+
+span{
+    color: #45A5B9;
+}
+
+progress{
+    width: 100%;
+}
+
+label{
+    margin-bottom: 0rem;
+    font-size: 14px;
+}
