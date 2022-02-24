@@ -1,0 +1,16 @@
+<div class="logged-in-app-container">
+    
+    <div class="logged-in-side-nav">
+        <app-sidenav (selectedOption)="option=$event"></app-sidenav>
+    </div>
+
+    <div class="logged-in-main-content">
+        <div class="logged-in-top-bar">
+            <app-top-bar [option]="option"></app-top-bar>
+        </div>
+        <div class="logged-in-routing">
+            Blog Logic
+        </div>
+    </div>
+
+</div>

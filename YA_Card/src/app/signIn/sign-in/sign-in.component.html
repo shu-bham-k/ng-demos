@@ -1,0 +1,25 @@
+<div class="row">
+    <!-- leftSide Logo layout -->
+    <div class="col col-xxl-6">
+        <app-logo></app-logo>
+    </div>
+    <!-- RightSide detail part -->
+    <div class="col col col-xxl-6" >
+        <form>
+        <h1 class="head">Admin Sign In for YA Card</h1>
+        <p class="text">Welcome back! Please enter your details</p>
+        <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+
+        <div class="password">
+            <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="Password">
+         <img src="../../../assets/logo and icon/Group 266.svg"> 
+        </div>
+        <p class="textAlert">Password must be 8 characters at least</p>
+        <p routerLink="/forgotPassword" class="forgotPassword">Forgot Password?</p>
+        <button class="btn btn-primary" type="submit">Sign In</button>
+    </form>
+    </div>
+</div>

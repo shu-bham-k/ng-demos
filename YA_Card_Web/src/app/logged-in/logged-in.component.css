@@ -1,0 +1,40 @@
+
+ .logged-in-app-container
+ {
+     display: inline-block;
+     width:100%;
+ }
+ 
+ .logged-in-side-nav
+ {
+     width:21%;
+     height:100vh;
+     background-color: #292526;
+     position:fixed;
+ }
+ 
+ .logged-in-main-content
+ {
+     display:inherit;
+     width:79%;
+     margin-left:21%;
+     background-color: #F8F8F8;
+ }
+ 
+ .logged-in-top-bar
+ {
+     display: inherit;
+     width:100%;
+ }
+ 
+ .logged-in-routing
+ {
+     display: inherit;
+     width:100%;
+ }
+ 
+ 
+ 
+ 
+ 
+ 

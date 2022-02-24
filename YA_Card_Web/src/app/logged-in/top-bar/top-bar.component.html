@@ -1,0 +1,24 @@
+<div class="top-bar-container">
+    <a class="back" *ngIf="backButton"
+    [style.display]="!backButton ? 'transparent' : 'inline-flex'" 
+    role="button">
+        <div class="back-button" (click)="changeView()"></div>
+    </a>
+    
+    <div class="name">{{displayName}}</div>
+
+    <div class="extra-feature" [ngSwitch]="displayName">
+        <div *ngSwitchCase="'Dashboard'">
+            <img src="../../assets/logo and icon/Group 100.svg" width="45vw" routerLink="/Profile">
+        </div>
+        <div *ngSwitchCase="'Settings'"></div>
+        <div *ngSwitchCase="'Profile'"></div>
+        <div *ngSwitchCase="'User Management'">
+            <div *ngIf="backButton"></div>
+            <div *ngIf="!backButton"><div class="search-bar"><input type="search" placeholder="Search"  ></div></div>
+        </div>
+        <div *ngSwitchDefault>
+            <div class="search-bar"><input type="search" placeholder="Search"  ></div>
+        </div>
+    </div>
+</div>

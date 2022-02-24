@@ -1,0 +1,57 @@
+@import "../logged-in.component.css";
+
+*
+{
+    margin:0;
+    padding:0;
+    font-weight: 600;
+}
+
+.side-nav-container
+{
+    color:white;
+    margin-left:10%;
+    width:90%;
+    height:100vh;
+}
+
+a
+{
+    padding:5% 6% 6% 6%;
+    transition:3s;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    text-decoration:none;
+    color:inherit;
+    display: inherit;
+    font-size: 1.3vw;
+}
+
+a:hover , .active
+{
+    color:#018A83;
+    background-color: #F8F8F8;
+    transition:3s;
+}
+
+.logo
+{
+    margin:20%;
+    margin-top:10%;
+    margin-bottom:8%;
+}
+
+.gap
+{
+    height:1vh;
+    background-color:#292526;
+}
+
+a img
+{
+    margin-left:10%;
+    width:8%;
+    background-color:inherit;
+    margin-right:2%;
+}
+

@@ -1,0 +1,165 @@
+@import "../logged-in.component.css";
+@import "../top-bar/top-bar.component.css";
+
+
+.poll{
+  width: 80%;
+    margin-left: 6px;
+}
+
+  .card {
+    width: 100%;
+    margin-top: 40px;
+    border-color: transparent;
+    border-radius: 8px;
+    box-shadow: 5px 10px 29px #EFEFEF;
+  }
+
+
+  .bottomText{
+    font-size: 0.9vw;
+    color: #9d9ea1;
+    margin-top: 0.2rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .card-body h6 {
+    font-size: 1.1vw;
+  }
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: -11px;
+    border: medium solid  #EFEFEF;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+    
+  }
+
+  .delete{
+    float: right;
+    margin-top: -23px;
+    position: relative;
+    height: 10%;
+  }
+
+  .delete .img-top {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.delete:hover .img-top {
+    display: inline;
+}
+
+  .sideImage img {
+    border-radius: 50%;
+    width: 32%;
+    margin-left: 101px;
+    margin-top: 2px;
+  }
+
+  .bottomText img{
+    width: 1.25%;
+    margin-top: -3.25px;
+    padding: 0.5px;
+    margin-right: 1.5px;
+  }
+
+  .dot {
+    height: 9px;
+    width: 9px;
+    margin-top: 6.1px;
+    margin-right: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+   
+    border: 1px solid #D5D5D7;
+  } 
+
+  .option p{
+    font-size: 1vw;
+    font-weight: 500;
+    margin-right: 20px;
+
+  }
+
+  .progess{
+    width:65%;
+    height: 20px;
+    border-radius: 12px;
+    
+     
+  }
+  progress{
+    width:100%;
+    height: 20px;
+   
+    
+  }
+
+ 
+
+  /* .progress-bar{
+    background-color: #018A83;
+  } */
+
+  .text-right{
+    text-align: right;
+    margin-top: 10px;
+    font-size: 12px;
+    margin-right: 37px;
+    color: black;
+    background-color: white;
+  }
+
+  .modal-header{
+    border-bottom: none;
+    display: block;
+    text-align: center;
+  }
+
+  .modal-footer {
+    border-top: none;
+    justify-content: center;
+  }
+
+  .yes{
+    margin-right: 36px;
+    width: 20%;
+    border: 1px solid #e9361f;
+    color: #e9361f;
+    
+  }
+
+  .yes:hover{
+    background-color: #e9361f;
+    color: #fff;
+  }
+
+  .no{
+    width: 20%;
+    border: 1px solid #6DAE35; 
+    color: #6DAE35;
+  }
+  
+  .no:hover{
+    background-color: #6DAE35;
+    color: #fff;
+  }
+  .btn:focus{
+   
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    
+}
+
+.ngx-pagination .current{
+ 
+}

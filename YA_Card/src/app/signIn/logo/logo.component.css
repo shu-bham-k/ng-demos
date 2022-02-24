@@ -1,0 +1,27 @@
+
+.main{
+    background-color: #292526;
+    width: 88%;
+    height: 100vh;
+    text-align: center;
+}
+
+img{
+    margin-top: 304px;
+    width: 53%;
+    
+}
+
+
+@media only screen and (max-height: 666px) {
+   .main{
+    height: 100%;
+   }
+}
+
+
+@media only screen and (max-width: 414px) {
+    .main{
+        width: 96%;
+    }
+}

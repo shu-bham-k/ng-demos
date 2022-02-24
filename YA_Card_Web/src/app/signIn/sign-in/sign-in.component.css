@@ -1,0 +1,18 @@
+@import '../adminsignIn.css';
+
+.forgotPassword{
+    
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 18px;
+  text-align: right;
+ 
+  
+  margin: 35px  68px 35px ;
+   
+}
+
+.forgotPassword a {
+    color: #E01346;
+    cursor: pointer;
+}

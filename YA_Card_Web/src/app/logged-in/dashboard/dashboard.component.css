@@ -1,0 +1,148 @@
+@import "../top-bar/top-bar.component.css";
+@import "../logged-in.component.css";
+
+.dashboard-container
+{
+    display:inline-block;
+    margin-top:5%;
+    margin-left:8%;
+    width:84%;
+    background-color: #F8F8F8;
+}
+
+.dashboard-nav
+{
+    width:100%;
+    display: inherit;
+    height:10%;
+    margin-bottom:1%;
+}
+
+.tabs
+{
+    display: inline;
+    width: auto;
+    margin-right:5vw;
+    font-size:1.4vw;
+    /* margin-bottom:2%; */
+    /* border:1px solid black; */
+}
+
+.tabs input
+{
+    width:7vw;
+    height:2px;
+    margin-left:1vw;
+    /* margin-right:0; */
+    border:transparent;
+    outline:1px solid lightslategrey;
+    border-radius:2px;
+    height:2%;
+    background-color: #F8F8F8;
+    font-size:1vw;
+    cursor: pointer;
+    /* padding:3%; */
+    /* text:none; */
+    /* color:transparent; */
+    /* text-overflow: clip; */
+    /* color: */
+}
+
+.tabs button
+{
+    cursor:pointer;
+    text-decoration: none;
+    color:lightslategrey;
+    outline:none;
+    border: none;
+    background-color: inherit;
+    margin-bottom:2px;
+    margin-left:0;
+
+}
+
+.tabs button:hover , .tabs button:focus
+{
+    border-bottom:2px solid #018A83;
+    color:#018A83;
+    margin-bottom:0;    
+}
+
+.info-card
+{
+    display:inline-flex;
+    width:30%;
+    width:32.46%;
+    border-radius:10px;
+    margin-right:1.3%;
+    margin-bottom:2%;
+    padding:2%; 
+}
+
+.card
+{
+    display:inherit;
+    font-weight:600;
+    border:0px;
+    background-color: inherit;
+    width:50%;
+    font-size:1.2vw
+    /* font */
+
+    
+}
+
+.date:hover
+{
+    display:transparent;
+    cursor: pointer;
+
+}
+
+
+.data
+{
+    font-weight:700;
+    font-size:2vw;
+    margin-top:3%
+}
+
+
+
+.info-card img
+{
+    margin-bottom:0%;
+    margin-top:0; 
+    width:25%;
+    margin-left:20%;
+    
+}
+table 
+{
+    border-radius: 10px ;
+    border:1px solid transparent;
+    width:100%;
+    font-weight:600;
+}
+
+th
+{
+    background-color:#EEEEEE;
+    padding:1% 1% 1% 2%;  /* top right bottom left */
+    font-weight:600;
+    font-size:1.1vw;
+}
+
+tr
+{
+    border-bottom:0.1px solid #F9F9F9;
+    margin-left:2%;
+}
+
+td
+{
+    padding: 1% 1% 1% 2%;   /* top right bottom left */
+    background-color: #FFFFFF;
+    font-size:1vw;
+}
+
