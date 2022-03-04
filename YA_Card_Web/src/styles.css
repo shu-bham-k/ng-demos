@@ -3,7 +3,52 @@ body{
     margin: 0px;
     background-color: #F8F8F8;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: "Segoe UI" }
+html, body { height: 100%;}
+body { margin: 0; font-family: "Segoe UI"}
 
 
+pagination-controls .ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #F8F8F8 ; 
+    color: #000000 !important;
+    cursor: default;
+  }
+
+
+ pagination-controls .ngx-pagination .pagination-next a::after  {
+    content: '>';
+    border: 0.5px solid;
+    padding: 1px;
+       
+}
+
+pagination-controls .ngx-pagination .pagination-next.disabled::after{
+    content: '>'; 
+    border: 0.5px solid;
+    padding: 1px;
+}
+
+pagination-controls .ngx-pagination .pagination-previous a::before {
+    content: '<';
+    border: 0.5px solid;
+    padding: 1px;
+}
+
+pagination-controls .ngx-pagination .pagination-previous.disabled::before{
+    content: '<';
+    border: 0.5px solid;
+    padding: 1px;
+}
+
+pagination-controls .ngx-pagination button {
+    color: #0a0a0a;
+    display: block;
+    padding: 0.1875rem 0.625rem;
+    border-radius: 0;
+    border: 1px solid #000000;
+}
+
+
+pagination-controls .ngx-pagination a:hover, .ngx-pagination button:hover {
+    background: #F8F8F8;
+}

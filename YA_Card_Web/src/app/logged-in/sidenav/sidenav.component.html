@@ -3,58 +3,61 @@
     <img src="..\..\assets\logo and icon\Group 583.svg" width="40%" class="logo">
     
 
-    <a routerLink="/Dashboard" (click)="selectedOption.emit('Dashboard')" routerLinkActive="active">
-        <img src="../../assets/logo and icon/Group 110.svg">    
+    <a routerLink="/Dashboard" (click)="changes('Dashboard')" class="dashboard-menu" routerLinkActive="active">
+        <div class="icon dashboard"></div>
         Dashboard
     </a>
     <div class="gap"></div>
 
-    <a routerLink="/User Management" (click)="selectedOption.emit('User Management')" routerLinkActive="active">
-        <img src="../../assets/logo and icon/Group 148.svg">    
+    <a routerLink="/User Management" (click)="changes('User Management')" class="user-mngmnt" routerLinkActive="active">
+        <div class="users-icon"></div>
         User Management
     </a>
     <div class="gap"></div>
 
-    <a routerLink="/Poll" (click)="selectedOption.emit('Poll')" routerLinkActive="active">
-        <img src="../../assets/logo and icon/Group 142.svg">    
+    <a routerLink="/Poll" (click)="changes('Poll')" class="poll-menu" routerLinkActive="active">
+        <div class="icon poll"></div>
         Poll
     </a>
     <div class="gap"></div>
 
-    <a routerLink="/Blogs" (click)="selectedOption.emit('Blogs')" routerLinkActive="active">
-        <img src="../../assets/logo and icon/Group 152.svg">    
+    <a routerLink="/Blogs" (click)="changes('Blogs')" class="blogs-menu" routerLinkActive="active">
+        <div class="icon blogs"></div>
         Blogs
     </a>
     <div class="gap"></div>
 
-    <a routerLink="/Groups" (click)="selectedOption.emit('Groups')" routerLinkActive="active">
-        <img src="../../assets/logo and icon/Group 155.svg">    
+    <a routerLink="/Groups" (click)="changes('Groups')" class="groups-menu" routerLinkActive="active">
+        <div class="icon groups"></div>
         Groups
     </a>
     <div class="gap"></div>
 
-    <a routerLink="/Reports" (click)="selectedOption.emit('Reports')" routerLinkActive="active">
-        <img src="../../assets/logo and icon/Group 157.svg">    
+    <a routerLink="/Reports" (click)="changes('Reports')" class="reports-menu" routerLinkActive="active">
+        <div class="icon reports"></div>
         Reports
     </a>
     <div class="gap"></div>
 
-    <a routerLink="/Profile" (click)="selectedOption.emit('Profile')" routerLinkActive="active">
-        <img src="../../assets/logo and icon/Group 160.svg">    
+    <a routerLink="/Profile" (click)="changes('Profile')" class="profile-menu" routerLinkActive="active">
+       <div class="icon profile"></div>
         Profile
     </a>
     <div class="gap"></div>
 
-    <a routerLink="/Settings" (click)="selectedOption.emit('Settings')" routerLinkActive="active">
-        <img src="../../assets/logo and icon/Group 163.svg">    
+    <a routerLink="/Settings" (click)="changes('Settings')" class="settings-menu" routerLinkActive="active">
+        <div class="icon settings"></div>
         Settings
     </a>
     <div class="gap"></div>
+    
+    {{active}}
 
-    <a style="margin-top:20%;">
-        <img src="../../assets/logo and icon/Group 165.svg">
+    <a style="margin-top:20%;" class="logout-menu">
+        <div class="icon logout"></div>
         Logout
     </a>
 
 </div>
+
 

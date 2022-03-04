@@ -1,3 +1,4 @@
+import { SubgroupsComponent } from './logged-in/subgroups/subgroups.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ForgotPasswordComponent } from './signIn/forgot-password/forgot-password.component';

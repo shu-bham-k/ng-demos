@@ -1,6 +1,7 @@
 @import "../top-bar/top-bar.component.css";
 @import "../logged-in.component.css";
 
+
 .dashboard-container
 {
     display:inline-block;
@@ -15,38 +16,16 @@
     width:100%;
     display: inherit;
     height:10%;
-    margin-bottom:1%;
 }
 
 .tabs
 {
-    display: inline;
-    width: auto;
-    margin-right:5vw;
+    display: inline-block;
+    margin-right:1.6vw;
+    width:15%;
     font-size:1.4vw;
-    /* margin-bottom:2%; */
-    /* border:1px solid black; */
 }
 
-.tabs input
-{
-    width:7vw;
-    height:2px;
-    margin-left:1vw;
-    /* margin-right:0; */
-    border:transparent;
-    outline:1px solid lightslategrey;
-    border-radius:2px;
-    height:2%;
-    background-color: #F8F8F8;
-    font-size:1vw;
-    cursor: pointer;
-    /* padding:3%; */
-    /* text:none; */
-    /* color:transparent; */
-    /* text-overflow: clip; */
-    /* color: */
-}
 
 .tabs button
 {
@@ -58,15 +37,49 @@
     background-color: inherit;
     margin-bottom:2px;
     margin-left:0;
-
 }
 
-.tabs button:hover , .tabs button:focus
+
+mat-date-range-input 
+{
+    font-size:1vw;
+    display:inline;
+    padding:0;
+    margin:0;
+}
+
+mat-form-field
+{
+    width:20vw;
+    font-family:inherit;
+    font-size:inherit;
+    background-color:inherit;
+    margin-right:0;
+    margin:0;
+}
+
+button.mat-icon-button
+{
+    margin:0;
+}
+
+
+
+.tabs button:hover , .tabs .btn-active
 {
     border-bottom:2px solid #018A83;
-    color:#018A83;
+    color: #018A83;
     margin-bottom:0;    
 }
+
+.mat-button
+{
+    outline:0;
+    border:0;
+    color:white;
+    margin-right:1%;
+}
+
 
 .info-card
 {
@@ -87,17 +100,8 @@
     background-color: inherit;
     width:50%;
     font-size:1.2vw
-    /* font */
-
-    
 }
 
-.date:hover
-{
-    display:transparent;
-    cursor: pointer;
-
-}
 
 
 .data
@@ -117,6 +121,7 @@
     margin-left:20%;
     
 }
+
 table 
 {
     border-radius: 10px ;
@@ -146,3 +151,27 @@ td
     font-size:1vw;
 }
 
+.view-more
+{
+    float:right;
+    font-size:2vh;
+    margin-bottom:2%;
+    margin-top:1%;
+}
+
+.view-more:hover
+{
+    cursor:pointer;
+}
+
+.cancel
+{
+    border-color:1px solid red;
+    color:red;
+    background-color:white;
+}
+
+.apply
+{
+    background-color:#6DAE35;
+}

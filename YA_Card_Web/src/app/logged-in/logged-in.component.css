@@ -7,8 +7,8 @@
  
  .logged-in-side-nav
  {
-     width:21%;
-     height:100vh;
+     width:20%;
+     height:100%;
      background-color: #292526;
      position:fixed;
  }
@@ -16,8 +16,8 @@
  .logged-in-main-content
  {
      display:inherit;
-     width:79%;
-     margin-left:21%;
+     width:100%;
+     padding-left:20%;
      background-color: #F8F8F8;
  }
  
@@ -25,6 +25,7 @@
  {
      display: inherit;
      width:100%;
+     background-color: aqua;
  }
  
  .logged-in-routing
@@ -34,7 +35,7 @@
  }
  
  
- 
+  
  
  
  

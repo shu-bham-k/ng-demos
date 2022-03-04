@@ -1,0 +1,34 @@
+[
+    {
+        "sno":1, "name":"Jack Group", "createdOn":"2 Feb,2022","createdBy":"Jack Palmer","totalMembers":"200","totalSubgroup":"10"
+    },
+    {
+        "sno":2, "name":"Mia Group", "createdOn":"4 Feb,2022","createdBy":"Mia Dyer","totalMembers":"50","totalSubgroup":"10"
+    },
+    {
+        "sno":3, "name":"Harry Group", "createdOn":"6 Feb,2022","createdBy":"Harry Joe","totalMembers":"300","totalSubgroup":"10"
+    },
+    {
+        "sno":4, "name":"Kevin Group", "createdOn":"8 Feb,2022","createdBy":"Kevin Joe","totalMembers":"400","totalSubgroup":"10"
+    },
+    {
+        "sno":5, "name":"Tora Group", "createdOn":"10 Feb,2022","createdBy":"Jack Tora","totalMembers":"200","totalSubgroup":"10"
+    },
+    {
+        "sno":6, "name":"Nick Group", "createdOn":"12 Feb,2022","createdBy":"James Nick","totalMembers":"600","totalSubgroup":"10"
+    },
+    {
+        "sno":7, "name":"Joe Group", "createdOn":"14 Feb,2022","createdBy":"Harry Joe","totalMembers":"200","totalSubgroup":"10"
+    },
+    {
+        "sno":8, "name":"Brian Group", "createdOn":"22 Feb,2022","createdBy":"Brian Lora","totalMembers":"200","totalSubgroup":"10"
+    },
+    {
+        "sno":9, "name":"Jake Group", "createdOn":"21 Feb,2022","createdBy":"Jake Palmer","totalMembers":"200","totalSubgroup":"10"
+    }, {
+        "sno":10, "name":"James Group", "createdOn":"23 Feb,2022","createdBy":"James Palmer","totalMembers":"100","totalSubgroup":"10"
+    },
+    {
+        "sno":11, "name":"JK Group", "createdOn":"25 Feb,2022","createdBy":"Jack Tora","totalMembers":"200","totalSubgroup":"10"
+    }
+]

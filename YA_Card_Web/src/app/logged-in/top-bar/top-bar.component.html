@@ -1,10 +1,8 @@
 <div class="top-bar-container">
-    <a class="back" *ngIf="backButton"
-    [style.display]="!backButton ? 'transparent' : 'inline-flex'" 
-    role="button">
+    <a class="back" *ngIf="backButton" [style.display]="!backButton ? 'transparent' : 'inline-flex'" role="button">
         <div class="back-button" (click)="changeView()"></div>
     </a>
-    
+
     <div class="name">{{displayName}}</div>
 
     <div class="extra-feature" [ngSwitch]="displayName">
@@ -15,10 +13,22 @@
         <div *ngSwitchCase="'Profile'"></div>
         <div *ngSwitchCase="'User Management'">
             <div *ngIf="backButton"></div>
-            <div *ngIf="!backButton"><div class="search-bar"><input type="search" placeholder="Search"  ></div></div>
+            <div *ngIf="!backButton">
+                <form>
+                    <input type="search" placeholder="Search" #text>
+                    <button type="submit" (click)="newItem(text.value)">Search</button>
+                  </form>
+            </div>
         </div>
         <div *ngSwitchDefault>
-            <div class="search-bar"><input type="search" placeholder="Search"  ></div>
+            <!-- <div class="search-bar"><img
+                    src="../../../assets/images/search-icon.svg" "></div> -->
+            <div *ngIf="!backButton">
+                <form>
+                    <input type="search" placeholder="Search" #text>
+                    <button type="submit" (click)="newItem(text.value)">Search</button>
+                </form>
+            </div>          
         </div>
     </div>
 </div>

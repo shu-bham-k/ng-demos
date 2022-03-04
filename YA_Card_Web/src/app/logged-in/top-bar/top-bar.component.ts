@@ -18,9 +18,20 @@ export class TopBarComponent implements OnInit
     this.backButton=!this.backButton;
   }
   constructor() { }
-
+test:any
   ngOnInit(): void 
   {
+    
+    
+  }
+
+  @Output() newItemEvent = new EventEmitter<any>();
+
+  newItem(value: any) {
+   
+    this.test = value
+    this.newItemEvent.emit(this.test);
+    
   }
 
 }

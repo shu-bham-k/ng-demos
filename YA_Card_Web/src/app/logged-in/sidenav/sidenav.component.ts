@@ -10,8 +10,12 @@ export class SidenavComponent implements OnInit {
 
   @Output() selectedOption= new EventEmitter<string>();
   menu:string[] = menu;
-  option?:string;
+  active?:string;
 
+  changes(arg:string)
+  {
+    this.selectedOption.emit(arg);
+  }
   constructor() { }
 
   ngOnInit(): void {

@@ -1,15 +1,17 @@
 <div class="logged-in-app-container">
 
     <div class="logged-in-side-nav">
-        <app-sidenav (selectedOption)="option=$event"></app-sidenav>
+        <app-sidenav (selectedOption)="option=$event"  ></app-sidenav>
     </div>
+  
 
     <div class="logged-in-main-content">
         <div class="logged-in-routing">
             <div class="logged-in-top-bar">
-                <app-top-bar [option]="option"></app-top-bar>
+                <app-top-bar [option]="option" (newItemEvent)="search($event)"></app-top-bar>
             </div>
-            <div class="box d-flex" *ngFor="let row of tableData| paginate
+            
+            <div class="box d-flex" *ngFor="let row of result | paginate
             : {
                 itemsPerPage: tableSize,
                 currentPage: page,
@@ -24,7 +26,7 @@
                         <div class="card right">
                             <div class="card-body">
                                 <div class="head" style="clear: both;">
-                                    <h6>{{row['fullName']}}</h6>
+                                    <h5>{{row.fullName}}</h5>
                                     <div class="delete">
                                         <img src="../../../assets/images/delete.svg">
                                         <img src="../../../assets/images/delete hover.svg" class="img-top"

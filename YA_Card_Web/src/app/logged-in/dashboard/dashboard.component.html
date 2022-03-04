@@ -14,34 +14,48 @@
             <div class="dashboard-nav">
 
                 <div class="tabs">
-                    <button>Today</button>
+                    <button (click)="today()" [class.btn-active]="todayBtn">Today</button>
                 </div>
 
                 <div class="tabs">
-                    <button>This Week</button>
+                    <button (click)="thisWeek()" [class.btn-active]="weekBtn">This Week</button>
                 </div>
 
                 <div class="tabs">
-                    <button>This Month</button>
+                    <button (click)="thisMonth()" [class.btn-active]="monthBtn">This Month</button>
                 </div>
 
                 <div class="tabs">
-                    <button>This Year</button>
+                    <button (click)="thisYear()" [class.btn-active]="yearBtn">This Year</button>
                 </div>
 
-                <div class="tabs" style="margin-right:0;">
-                    <span class="date">
-                            <button>Date</button>
-                            <input id="toDate" name="toDate" placeholder="From">
-                            <input id="fromDate" name="fromDate" placeholder="To"  >
-                    </span>
+                <div class="tabs">
+                    <mat-form-field appearance="outline">
+                        <mat-label style="margin-bottom:2%;padding-bottom:1%;;font-size:1vw;">Select Date Range</mat-label>
+                        <mat-date-range-input color="accent" [rangePicker]="rangePicker">
+                            <input matStartDate placeholder="From"  (dateInput)="fromStartDate($event)">
+                            <input matEndDate placeholder="To" (dateInput)="toEndDate($event)">
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle color="main" matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+                    </mat-form-field>
                 </div>
-            </div>                
+            </div>     
+            
+            
+             <mat-date-range-picker #rangePicker>
+                <mat-date-range-picker-actions>
+                    <button matDateRangePickerCancel class="mat-button cancel" style="border-color:1px solid red">Cancel</button>
+                    <button matDateRangePickerApply class="mat-button apply" (click)="dateRange()">Apply</button>
+                </mat-date-range-picker-actions>
+            </mat-date-range-picker>
+
+            
+
             
             <div class="info-card" style="border:1px solid #EE5656;" >
                 <div class="card">
                     Total Number of Members 
-                    <div class="data">{{today[0]}}</div>
+                    <div class="data">{{results.TotalMembers}}</div>
                 </div>
                     <img src="../../assets/logo and icon/Group 100.svg" style="width:20%">              
             </div>
@@ -49,7 +63,7 @@
             <div class="info-card" style="border:1px solid #2FB4C2;" >
                 <div class="card">
                     Total Number of Groups
-                    <div class="data">{{today[1]}}</div>
+                    <div class="data">{{results.TotalGroups}}</div>
                 </div>
                     <img src="../../assets/logo and icon/Group 92.svg" >              
             </div>
@@ -57,7 +71,7 @@
             <div class="info-card" style="border:1px solid #82C846; margin-right:0;" >
                 <div class="card">
                     Total Number of Subgroups 
-                    <div class="data">{{today[2]}}</div>
+                    <div class="data">{{results.TotalSubGroups}}</div>
                 </div>
                     <img src="../../assets/logo and icon/Group 108.svg">              
             </div>
@@ -65,7 +79,7 @@
             <div class="info-card" style="border:1px solid #A2CF68;" >
                 <div class="card">
                     Total Number of Polls Created
-                    <div class="data">{{today[3]}}</div>
+                    <div class="data">{{results.TotalPollsCreated}}</div>
                 </div>
                     <img src="../../assets/logo and icon/Group 141.svg">              
             </div>
@@ -73,19 +87,20 @@
             <div class="info-card" style="border:1px solid #CC9966" >
                 <div class="card">
                     Total Number of Events Created 
-                    <div class="data">{{today[4]}}</div>
+                    <div class="data">{{results.TotalEventsCreated}}</div>
                 </div>
                     <img src="../../assets/logo and icon/Group 639.svg">              
             </div>
             
             <div class="info-card" style="border:1px solid #018A83; margin-right:0;" >
                 <div class="card">
-                    Total Number of Blog Created
-                    <div class="data">{{today[5]}}</div>
+                    Total Number of Blogs Created
+                    <div class="data">{{results.TotalBlogsCreated}}</div>
                 </div>
                     <img src="../../assets/logo and icon/Group 104.svg">              
             </div>
             
+            <ng-container *ngIf="tableRows.length!=0">
             <table>
                 <tr>
                     <th style="border-top-left-radius:10px;width:13%;">
@@ -107,22 +122,26 @@
                         Status
                     </th>
                 </tr>
-                <tr *ngFor="let row of tableData;let i = index;">
-                    <ng-container *ngIf="i<=4">
-                        <td [style.border-bottom-left-radius]="i==4 ? '10px' : 'none'"
+                <tr *ngFor="let row of tableRows;let i = index;let isLast = last;">
+                    <ng-container *ngIf="tableRows.length!=0 && i<=4">
+                        <td [style.border-bottom-left-radius]=" i==4 ? '10px' : 'none'"
                             style="padding-left:3%"
-                        >{{row['sno']}}</td>
-                        <td>{{row['username']}}</td>
-                        <td>{{row['fullName']}}</td>
-                        <td>{{row['emailId']}}</td>
-                        <td>{{row['doj']}}</td>
-                        <td [style.border-bottom-right-radius]="i==4 ? '10px' : 'none'"
-                            [style.color]="row['status'] == 'Active' ? 'green' : 'red'">
-                            {{row['status']}}
+                        >{{i+1}}</td>
+                        <td>{{row['userName']}}</td>
+                        <td>{{row['firstName']}} {{row['lastName']}}</td>
+                        <td>{{row['email']}}</td>
+                        <td>{{row['createdOn']}}</td>
+                        <td [style.border-bottom-right-radius]=" i==4 ? '10px' : 'none'"
+                            [style.color]="row['status'] == true ? 'green' : 'red'">
+                            {{row['status'] == true ? "Active" : "Inactive"}}
                         </td>
                     </ng-container>
+                    
                 </tr>
             </table>
+            <div class="view-more" routerLink="/User Management">View More</div>
+        </ng-container>
+   
             
         </div>
     </div>

@@ -1,5 +1,3 @@
-import { data } from './../../../assets/data/adminsignIn-data';
-
 import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ApiService } from './../../api.service';

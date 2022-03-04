@@ -1,8 +1,8 @@
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule,  HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {TranslateModule,TranslateLoader} from '@ngx-translate/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -28,9 +28,15 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { NgxPaginationModule } from 'ngx-pagination';
-import { Ng2OrderModule } from 'ng2-order-pipe';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MatNativeDateModule } from '@angular/material/core';
+import { RequestInterceptor } from './api-services/request-interceptor.service';
+import {MatButtonToggleModule} from '@angular/material/button-toggle'; 
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SubgroupsComponent } from './logged-in/subgroups/subgroups.component';
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -50,6 +56,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     SettingsComponent,
     TopBarComponent,
     LoggedInComponent,
+    SubgroupsComponent,
    
    
   ],
@@ -64,14 +71,22 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserAnimationsModule,
     HttpClientModule,
     NgxPaginationModule,
-    Ng2OrderModule,
-    Ng2SearchPipeModule
-    
-    
-    
+    MatFormFieldModule,
+    MatButtonToggleModule,
+    HttpClientModule,
+    BrowserAnimationsModule ,
+    MatNativeDateModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+    }
+    }),
 
   ],
-  providers: [],
+  providers: 
+  [ {provide : HTTP_INTERCEPTORS, useClass:RequestInterceptor, multi:true } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

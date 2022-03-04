@@ -1,0 +1,25 @@
+
+  {
+    "Home_Title" : "Admin Sign In for YA Card",
+    "Welcome_Message" : "Welcome back! Please enter your details",
+    "Email": "E-mail",
+    "Password": "Password",
+    "Required_Email":"Email is required",
+    "Valid_Email": " There should be a valid email",
+    "Required_Password": "Password is required",
+    "Valid_Password": "Password must be 8 characters at least",
+    "Incorrect_Detail": "Incorrect Email or Password",
+    "Forgot_Password": " Forgot Password?",
+    "Sign_In":"Sign In",
+    "Set_Password_Title": "Set New Password",
+    "Set_Password_Message":"Please create a secure password including the following info",
+    "Confirm_Password":"Confirm New Password",
+    "Valid_Confirm_Password":"Password is not same",
+    "Check_User":"Invalid User",
+    "Reset_Password":"Reset Password",
+    "Reset_Successfully": " Your Password has been successfully reset.",
+    "Qr": "QR Code Validity Time",
+    "Terms_And_Condition":"Terms and Conditions",
+    "Privacy_Policy": "Privacy Policy",
+    "About_Us":"About Us"
+  }

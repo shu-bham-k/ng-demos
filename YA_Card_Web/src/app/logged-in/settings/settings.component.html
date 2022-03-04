@@ -1,7 +1,5 @@
-
-
 <div class="logged-in-app-container">
-    
+
     <div class="logged-in-side-nav">
         <app-sidenav (selectedOption)="option=$event"></app-sidenav>
     </div>
@@ -11,7 +9,120 @@
             <div class="logged-in-top-bar">
                 <app-top-bar [option]="option"></app-top-bar>
             </div>
-            <p>settings works!</p>
+            <!--  -->
+            <div class="main" *ngFor="let data of tableData">
+            <div class="container">
+                <div class="box">
+                    <p class="text" [style.color]="changeColor ? '#018A83' : '#707070'">{{'Qr'| translate}}</p>
+                    <img src="../../../assets/images/edit.svg" *ngIf="timer" (click)="editTimer()" class="edit">
+                    <img src="../../../assets/images/edit2.svg" *ngIf="!timer" class="edit">
+                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColor"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" (click)="dropdown()"
+                        class="drop">
+                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColor"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" (click)="dropdown()"
+                        class="drop">
+                </div>
+                <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                    <div class="card qrBody">
+                        <div class="card-body">
+                            <img src="../../../assets/images/qr-code.svg" class="qrCode">
+                            <div class="timer">
+                                <div class="time" *ngIf="timer"> <img
+                                        src="../../../assets/images/timer.svg"><span>{{data.qr_timer}} Seconds</span></div>
+                                <div class="editTime" *ngIf="!timer"><input type="number" name="time" max="15"
+                                        [(ngModel)]="data.qr_timer"> &nbsp; <label>Seconds</label></div>
+                                <button type="submit" *ngIf="!timer" (click)="saveTimer()"
+                                    class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+            <div class="container">
+                <div class="box">
+                    <p class="text" [style.color]="changeColor2 ? '#018A83' : '#707070'">{{'Terms_And_Condition' | translate}}</p>
+                    <img src="../../../assets/images/edit.svg" *ngIf="!textArea_terms" (click)="editTerms()" class="edit">
+                    <img src="../../../assets/images/edit2.svg" *ngIf="textArea_terms" class="edit">
+                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColor2"
+                        [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseExample" (click)="dropdown2()"
+                        class="drop">
+                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColor2"
+                        [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseExample" (click)="dropdown2()"
+                        class="drop">
+                </div>
+                <div id="collapseExample" [ngbCollapse]="isCollapsed2">
+                    <div class="card">
+                        <div class="card-body">
+                            <p *ngIf="!textArea_terms"> {{data.terms_and_condition}}</p>
+                            <div class="textArea" *ngIf="textArea_terms">
+                                <!-- <label>
+                                    Edit Terms and Conditions:-
+                                </label> -->
+                                <textarea rows="6"  [(ngModel)]="data.terms_and_condition" name="comment" form="usrform">
+                                </textarea>
+
+
+                                <button type="submit" (click)="saveTerms()" class="btn btn-primary">Save</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
+            <div class="container">
+                <div class="box">
+                    <p class="text" [style.color]="changeColor3 ? '#018A83' : '#707070'">{{'Privacy_Policy' |translate }}</p>
+                    <img src="../../../assets/images/edit.svg" *ngIf="!textArea_privacy" (click)="editPrivacy()" class="edit">
+                    <img src="../../../assets/images/edit2.svg" *ngIf="textArea_privacy" class="edit">
+                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColor3"
+                        [attr.aria-expanded]="!isCollapsed3" aria-controls="collapseExample" (click)="dropdown3()"
+                        class="drop">
+                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColor3"
+                        [attr.aria-expanded]="!isCollapsed3" aria-controls="collapseExample" (click)="dropdown3()"
+                        class="drop">
+                </div>
+                <div id="collapseExample" [ngbCollapse]="isCollapsed3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p *ngIf="!textArea_privacy"> {{data.privacy}}</p>
+                            <div class="textArea" *ngIf="textArea_privacy">
+                                <!-- <label>
+                                    Edit Terms and Conditions:-
+                                </label> -->
+                                <textarea rows="6"  [(ngModel)]="data.privacy" name="comment" form="usrform">
+                                </textarea>
+
+
+                                <button type="submit" (click)="savePrivacy()" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+            <div class="container">
+                <div class="box">
+                    <p class="text" [style.color]="changeColor4 ? '#018A83' : '#707070'">{{'About_Us'| translate}}</p>
+                    <img src="../../../assets/images/edit.svg" class="edit">
+                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColor4"
+                        [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseExample" (click)="dropdown4()"
+                        class="drop">
+                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColor4"
+                        [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseExample" (click)="dropdown4()"
+                        class="drop">
+                </div>
+                <div id="collapseExample" [ngbCollapse]="isCollapsed4">
+                    <div class="card">
+                        <div class="card-body">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

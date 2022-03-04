@@ -1,7 +1,8 @@
 
-import { Component, Input, OnInit } from '@angular/core';
-import { pollsData, tableData, today } from 'src/assets/data/dashboard-today';
-import { PollsData, TableData } from 'src/assets/data/table-data';
+
+import { Component, OnInit } from '@angular/core';
+import { pollsData, today } from 'src/assets/data/dashboard-today';
+import { PollsData } from 'src/assets/data/table-data';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -12,9 +13,11 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class PollComponent implements OnInit {
 
   option='Poll'
+  result!:PollsData[];
+  
   constructor(private modalService: NgbModal) { }
 
-  tableData:PollsData[] = pollsData;
+  data:PollsData[] = pollsData;
   today:number[] = today;
 
   // Pagination parameters.
@@ -25,9 +28,10 @@ export class PollComponent implements OnInit {
  
 
   ngOnInit(): void {
-   
+    this.result = this.data;
+    
   }
- 
+
   text:any= "lipsum as it sometimes known, is dummy text used in laying out print, graphic or web designs?"
 
   
@@ -79,15 +83,23 @@ export class PollComponent implements OnInit {
   }  
   
   deleteHero(index:any) {  
-    this.tableData.splice(index,1);  
+    this.data.splice(index,1);  
   }  
   
-  // search 
+  //search
+   
 
 
+  search(value:string){
     
-
-
-
+    console.log(value)
+    if(!value.trim()){
+      return this.ngOnInit();
+    }else{
+    this.result = this.data.filter(result => {
+      return result.fullName.toLocaleLowerCase().match(value.toLocaleLowerCase())
+    })
+  }
+  }
 
 }

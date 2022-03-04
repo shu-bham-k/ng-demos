@@ -22,9 +22,11 @@
     margin-top: 0.2rem;
     margin-bottom: 0.7rem;
   }
-
+  .card-body h5 {
+    font-size: 1.2vw;
+  }
   .card-body h6 {
-    font-size: 1.1vw;
+    font-size: 1.2vw;
   }
   .right::before {
     content: " ";
@@ -116,7 +118,7 @@
     font-size: 12px;
     margin-right: 37px;
     color: black;
-    background-color: white;
+    
   }
 
   .modal-header{
@@ -160,6 +162,13 @@
     
 }
 
-.ngx-pagination .current{
- 
+@media only screen and (max-width: 700px) {
+  .sideImage img{
+    margin-left: 60px;
+  }
+  .poll{
+    width: 90%;
+  }
+
 }
+

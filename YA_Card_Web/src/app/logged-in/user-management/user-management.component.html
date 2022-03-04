@@ -1,5 +1,3 @@
-
-
 <div class="logged-in-app-container">
     
     <div class="logged-in-side-nav">
@@ -9,10 +7,114 @@
     <div class="logged-in-main-content">
         <div class="logged-in-routing">
             <div class="logged-in-top-bar">
-                <app-top-bar [option]="option"></app-top-bar>
+                <app-top-bar [option]="option" [back]="show" (show)="show=$event"></app-top-bar>
             </div>
-            <p>user-management works THi si user management working bro!!!</p>
+
+            <div class="user-management-container">
+                <ng-container *ngIf="!show">
+                    <div class="filter" role="button">
+                        <img src="../../../assets/images/filter.svg" style="width:1vw;margin-right:0.5vw;">Filter
+                    </div>
+
+                    <table>
+                        <tr>
+                            <th style="border-top-left-radius:10px;width:13%;">
+                                S.no
+                            </th>
+                            <th>
+                                Username
+                            </th>
+                            <th>
+                                Full Name
+                            </th>
+                            <th>
+                                Email Id
+                            </th>
+                            <th>
+                                Date of Joining 
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th colspan="2" style="border-top-right-radius:10px">Action</th>
+                        </tr>
+
+                        <tr *ngFor="let data of tableData;let sno = index" 
+                        [style.border-bottom-right-radius]="sno==10 ? '10px' : 'none'"
+                        [style.background-color]=" sno%2 != 0 ? 'tomato' : 'hotpink'">
+                            <td >{{sno+1}}</td>
+                            <td>{{data.username}}</td>
+                            <td>{{data.fullName}}</td>
+                            <td>{{data.emailId}}</td>
+                            <td>{{data.doj}}</td>
+                            <td [style.color]="data['status'] == 'Active' ? 'green' : 'red'">
+                                {{data.status}}</td>
+                            <td (click)="changeView([data.fullName,data.emailId,data.doj])"><div class="eye"></div></td>
+                            <td (click)="open(content,sno)"><div class="delete"></div></td>
+                        </tr>
+                    </table>
+                </ng-container>
+
+                <ng-container *ngIf="show">
+                    <div class="detail-box">
+                        <div class="person-info">
+                            <div class="prof-img"></div>
+                            <div class="info-bar">
+                                <div class="info" >
+                                    <small>Full Name</small><br>
+                                    <div class="bolder-data">{{userData.fullName}}</div>
+                                </div>
+                                <div class="info">
+                                    <small>Email</small><br>
+                                    <div class="bolder-data">{{userData.emailId}}</div>
+                                </div>
+                                <div class="info">
+                                    <small>Date of Joining</small><br>
+                                    <div class="bolder-data">{{userData.doj}}</div>
+                                </div>
+                                <div class="info" >
+                                    <div class="qr-code" style="float:right"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <table style="margin-top:0">
+                            <tr>
+                                <th style="width:25%;">S.No</th>
+                                <th style="width:25%">Group Name</th>
+                                <th style="width:25%">Admin</th>
+                                <th style="width:25%;text-align:center">Total Members</th>
+                            </tr>
+                            <ng-container *ngIf="userData.groups.groupName.length">
+                                <tr *ngFor="let groupName of userData.groups.groupName,let i=index">
+                                        <td>{{i+1}}</td>
+                                        <td>{{userData.groups.groupName[i]}}</td>
+                                        <td>{{userData.groups.admin[i]}}</td>
+                                        <td style="text-align:center">{{userData.groups.totalMembers[i]}}</td>
+                                </tr>
+                            </ng-container>
+                            <ng-container *ngIf="!userData.groups.groupName.length">
+                                <tr class="blank-table"><i>No Data Available</i></tr>
+                            </ng-container>
+
+                        </table>
+
+                    </div>
+                </ng-container>
             </div>
-            </div>
-            </div>
+            <ng-template #content let-c="close" let-d="dismiss">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-basic-title">Are you sure you want to delete this?</h5>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn  yes" (click)="c('yes')">Yes</button>
+                    <button type="button" class="btn btn-outline-dark no" (click)="d('Cross click')">Cancel</button>
+
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
             

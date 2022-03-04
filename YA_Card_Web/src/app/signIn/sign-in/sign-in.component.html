@@ -6,24 +6,24 @@
     <!-- RightSide detail part -->
     <div class="col col-xxl-6">
         <form [formGroup]="userDetail" (ngSubmit)="onSubmit(Email.value,Password.value)">
-            <h1 class="head">Admin Sign In for YA Card</h1>
-            <p class="text">Welcome back! Please enter your details</p>
+            <h1 class="head">{{ 'Home_Title' | translate }}</h1>
+            <p class="text">{{'Welcome_Message' | translate}}</p>
             <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+                <label for="exampleFormControlInput1" class="form-label">{{'Email'| translate}}</label>
                 <input type="email" class="form-control" #Email
                 [class.is-invalid]="email?.invalid && (email?.touched || email?.dirty)"
                         formControlName="email" placeholder="Email">
                  <div *ngIf="email?.invalid && (email?.touched || email?.dirty)">
                     <small class="text-danger" *ngIf="email?.errors?.['required']">
-                        <p class="textAlert" style="margin-bottom: -9px;">Email is required</p>
+                        <p class="textAlert" style="margin-bottom: -9px;">{{'Required_Email'| translate}}</p>
                     </small>
                     <small class="text-danger" *ngIf="email?.errors?.['pattern']">
-                        <p class="textAlert" style="margin-bottom: -9px;"> There should be a valid email</p>
+                        <p class="textAlert" style="margin-bottom: -9px;"> {{'Valid_Email'| translate}}</p>
                     </small>
                 </div> 
             </div>
             <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label">Password</label>
+                <label for="exampleFormControlInput1" class="form-label">{{'Password'|translate}}</label>
 
                 <div class="password">
                     <input type="password" #Password
@@ -38,11 +38,11 @@
                 </div>
                 <div *ngIf="password?.invalid && (password?.touched || password?.dirty)">
                      <small class="text-danger" *ngIf="password?.errors?.['required']">
-                        <p class="textAlert">Password is required</p>
+                        <p class="textAlert">{{'Required_Password'|translate}}</p>
                     </small>
                    
                     <small class="text-danger"  *ngIf="password?.errors?.['pattern']">
-                        <p class="textAlert">Password must be 8 characters at least</p>
+                        <p class="textAlert">{{'Valid_Password' | translate}}</p>
                     </small>
                    </div>
                
@@ -51,11 +51,11 @@
 
             <div *ngIf="isLoginError && userDetail?.valid" >
                 
-                <p class="text-danger textAlert">Incorrect Email or Password</p>
+                <p class="text-danger textAlert">{{'Incorrect_Detail'|translate}}</p>
             </div>
            
-            <p  class="forgotPassword"><a routerLink="/forgotPassword"> Forgot Password?</a></p>
-            <button class="btn btn-primary" [disabled]="userDetail?.invalid"  type="submit">Sign In</button>
+            <p  class="forgotPassword"><a routerLink="/forgotPassword">{{'Forgot_Password' |translate}}</a></p>
+            <button class="btn btn-primary" [disabled]="userDetail?.invalid"  type="submit">{{'Sign_In' |translate}}</button>
         </form>
     </div>
 </div>

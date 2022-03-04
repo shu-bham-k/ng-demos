@@ -12,13 +12,12 @@
     color:white;
     margin-left:10%;
     width:90%;
-    height:100vh;
+    height:100v;
 }
 
 a
 {
     padding:5% 6% 6% 6%;
-    transition:3s;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     text-decoration:none;
@@ -27,12 +26,13 @@ a
     font-size: 1.3vw;
 }
 
-a:hover , .active
+a:hover,.active
 {
     color:#018A83;
-    background-color: #F8F8F8;
-    transition:3s;
+    background-color: #F8F8F8;   
 }
+
+a:hover { transition: 3s; }
 
 .logo
 {
@@ -47,11 +47,125 @@ a:hover , .active
     background-color:#292526;
 }
 
-a img
+a img , a:hover .img-hover
 {
     margin-left:10%;
+    display: inline;
     width:8%;
-    background-color:inherit;
     margin-right:2%;
+    transition:unset;
 }
+
+a:hover img , a .img-hover
+{
+    display:none;
+    transition:unset;
+}
+
+.users-icon
+{
+   display: inline-block;
+   background-image: url("/assets/images/users-icon-white.svg");
+   background-repeat: no-repeat;
+   width: 1.4vw;
+   height:1.2vw;
+   margin-left:10%;
+   margin-right:2%;
+   background-size: cover;
+}
+
+
+a.active > .users-icon { background-image: url("/assets/images/users-icon-green.svg") ; }
+
+a.user-mngmnt:hover .users-icon { background-image: url("/assets/images/users-icon-green.svg") ; }
+
+.icon
+{
+   display: inline-block;
+   background-repeat: no-repeat;
+   margin-left:10%;
+   margin-right:2%;
+   background-size: cover;
+}
+
+.dashboard-menu .icon
+{
+    background-image:url("/assets/images/dashboard-white.svg");
+    width: 1.2vw;
+    height:1.2vw;
+}
+
+.dashboard-menu:hover .dashboard , a.active > .dashboard{background-image:url("/assets/images/dashboard-green.svg");}
+
+.poll-menu .icon
+{
+    background-image:url("/assets/images/poll-white.svg");
+    width: 1.2vw;
+    height:1.1vw;
+}
+
+.poll-menu:hover .poll , a.active > .poll { background-image:url("/assets/images/poll-green.svg")}
+
+.blogs-menu .icon
+{
+    background-image:url("/assets/images/blogs-white.svg");
+    width: 1.2vw;
+    height:1.2vw;
+}
+
+.blogs-menu:hover .blogs , a.active > .blogs { background-image:url("/assets/images/blogs-green.svg")}
+
+.groups-menu .icon
+{
+    background-image:url("/assets/images/groups-white.svg");
+    width: 1.4vw;
+    height:1.2vw;
+}
+
+.groups-menu:hover .groups , a.active > .groups { background-image:url("/assets/images/groups-green.svg")}
+
+
+.reports-menu .icon
+{
+    background-image:url("/assets/images/reports-white.svg");
+    width: 1.2vw;
+    height:1.2vw;
+}
+
+.reports-menu:hover .reports , a.active > .reports { background-image:url("/assets/images/reports-green.svg")}
+
+
+.profile-menu .icon
+{
+    background-image:url("/assets/images/profile-white.svg");
+    width: 1.1vw;
+    height:1.3vw;
+}
+
+.profile-menu:hover .profile , a.active > .profile { background-image:url("/assets/images/profile-green.svg")}
+
+
+.settings-menu .icon
+{
+    background-image:url("/assets/images/settings-white.svg");
+    width: 1.2vw;
+    height:1.2vw;
+}
+
+.settings-menu:hover .settings , a.active > .settings { background-image:url("/assets/images/settings-green.svg")}
+
+
+.logout-menu .icon
+{
+    background-image:url("/assets/images/logout-white.svg");
+    width: 1.2vw;
+    height:1.4vw;
+}
+
+.logout-menu:hover .logout , a.active > .logout { background-image:url("/assets/images/logout-green.svg")}
+
+
+
+
+
 
