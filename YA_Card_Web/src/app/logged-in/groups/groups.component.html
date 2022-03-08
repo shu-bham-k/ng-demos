@@ -7,7 +7,7 @@
     </div>
 
     <div class="logged-in-main-content">
-        <div class="logged-in-routing">
+        <!-- <div class="logged-in-routing">
             <div class="logged-in-top-bar">
                 <app-top-bar [option]="option" [back]="subgroup" (show)="changeView('Groups',$event)" (newItemEvent)="search($event)"></app-top-bar>
             </div>
@@ -64,7 +64,8 @@
                 </ng-container>
 
                 <ng-container *ngIf="subgroup">
-                    <app-subgroups></app-subgroups>
+                    <app-group-detail [data]="userDetail">
+                    </app-group-detail>
                 </ng-container>
 
         
@@ -81,7 +82,8 @@
 
                 </div>
             </ng-template>
-            </div>
+            </div> -->
+            <router-outlet></router-outlet>
             </div>
             </div>
             

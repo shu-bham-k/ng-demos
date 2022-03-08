@@ -1,3 +1,5 @@
+import { GroupDetailComponent } from './logged-in/group-detail/group-detail.component';
+import { ListComponent } from './logged-in/groups/list/list.component';
 import { SubgroupsComponent } from './logged-in/subgroups/subgroups.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -25,7 +27,18 @@ const routes: Routes = [
 
   {path:'Dashboard', component:DashboardComponent},  
   {path:'Blogs', component:BlogsComponent},
-  {path:'Groups', component:GroupsComponent},
+  {path:'Groups', component:GroupsComponent,
+children:[
+  {path:'detail/:id',component:GroupDetailComponent},
+{
+  path:'list',component:ListComponent,
+},
+{
+  path:'', redirectTo:'list',pathMatch:'full'
+},
+
+]
+},
   {path:'Poll', component:PollComponent},
   {path:'Profile', component:ProfileComponent},
   {path:'Reports', component:ReportsComponent},

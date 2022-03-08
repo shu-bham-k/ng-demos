@@ -1,17 +1,17 @@
-import { GroupsService } from './groups.service';
+
+import { GroupsService } from '../groups.service';
 
 import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GroupsData } from 'src/assets/data/table-data';
 
 
-
 @Component({
-  selector: 'app-groups',
-  templateUrl: './groups.component.html',
-  styleUrls: ['./groups.component.css']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
 })
-export class GroupsComponent implements OnInit {
+export class ListComponent implements OnInit {
 
   option='Groups';
   tableData:any;
@@ -100,6 +100,6 @@ userDetail!:string
     this.subgroup = state;
     this.option = name;
     this.userDetail=name;
-  
   }
+
 }

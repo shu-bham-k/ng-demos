@@ -33,6 +33,8 @@ import { RequestInterceptor } from './api-services/request-interceptor.service';
 import {MatButtonToggleModule} from '@angular/material/button-toggle'; 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SubgroupsComponent } from './logged-in/subgroups/subgroups.component';
+import { GroupDetailComponent } from './logged-in/group-detail/group-detail.component';
+import { ListComponent } from './logged-in/groups/list/list.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -57,6 +59,8 @@ export function createTranslateLoader(http: HttpClient) {
     TopBarComponent,
     LoggedInComponent,
     SubgroupsComponent,
+    GroupDetailComponent,
+    ListComponent,
    
    
   ],

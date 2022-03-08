@@ -39,7 +39,7 @@ export class SubgroupsComponent implements OnInit {
   POSTS: any;
   page: number = 1;
   count: number = 0;
-  tableSize: number = 3;
+  tableSize: number = 7;
 
   onTableDataChange(event: any) {
    this.page = event;

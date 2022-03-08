@@ -10,20 +10,20 @@
                 <app-top-bar [option]="option"></app-top-bar>
             </div>
             <!--  -->
-            <div class="main" *ngFor="let data of tableData">
+            <div class="main" *ngFor="let data of settingsData">
             <div class="container">
                 <div class="box">
-                    <p class="text" [style.color]="changeColor ? '#018A83' : '#707070'">{{'Qr'| translate}}</p>
+                    <p class="text" [style.color]="changeColorQr ? '#018A83' : '#707070'">{{'Qr'| translate}}</p>
                     <img src="../../../assets/images/edit.svg" *ngIf="timer" (click)="editTimer()" class="edit">
                     <img src="../../../assets/images/edit2.svg" *ngIf="!timer" class="edit">
-                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColor"
-                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" (click)="dropdown()"
+                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColorQr"
+                        [attr.aria-expanded]="!isCollapsedQr" aria-controls="collapseExample" (click)="dropdownQr()"
                         class="drop">
-                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColor"
-                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" (click)="dropdown()"
+                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColorQr"
+                        [attr.aria-expanded]="!isCollapsedQr" aria-controls="collapseExample" (click)="dropdownQr()"
                         class="drop">
                 </div>
-                <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                <div id="collapseExample" [ngbCollapse]="isCollapsedQr">
                     <div class="card qrBody">
                         <div class="card-body">
                             <img src="../../../assets/images/qr-code.svg" class="qrCode">
@@ -42,17 +42,17 @@
             </div>
             <div class="container">
                 <div class="box">
-                    <p class="text" [style.color]="changeColor2 ? '#018A83' : '#707070'">{{'Terms_And_Condition' | translate}}</p>
+                    <p class="text" [style.color]="changeColorTerms ? '#018A83' : '#707070'">{{'Terms_And_Condition' | translate}}</p>
                     <img src="../../../assets/images/edit.svg" *ngIf="!textArea_terms" (click)="editTerms()" class="edit">
                     <img src="../../../assets/images/edit2.svg" *ngIf="textArea_terms" class="edit">
-                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColor2"
-                        [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseExample" (click)="dropdown2()"
+                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColorTerms"
+                        [attr.aria-expanded]="!isCollapsedTerms" aria-controls="collapseExample" (click)="dropdownTerms()"
                         class="drop">
-                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColor2"
-                        [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseExample" (click)="dropdown2()"
+                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColorTerms"
+                        [attr.aria-expanded]="isCollapsedTerms" aria-controls="collapseExample" (click)="dropdownTerms()"
                         class="drop">
                 </div>
-                <div id="collapseExample" [ngbCollapse]="isCollapsed2">
+                <div id="collapseExample" [ngbCollapse]="isCollapsedTerms">
                     <div class="card">
                         <div class="card-body">
                             <p *ngIf="!textArea_terms"> {{data.terms_and_condition}}</p>
@@ -74,17 +74,17 @@
             </div>
             <div class="container">
                 <div class="box">
-                    <p class="text" [style.color]="changeColor3 ? '#018A83' : '#707070'">{{'Privacy_Policy' |translate }}</p>
+                    <p class="text" [style.color]="changeColorPrivacy ? '#018A83' : '#707070'">{{'Privacy_Policy' |translate }}</p>
                     <img src="../../../assets/images/edit.svg" *ngIf="!textArea_privacy" (click)="editPrivacy()" class="edit">
                     <img src="../../../assets/images/edit2.svg" *ngIf="textArea_privacy" class="edit">
-                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColor3"
-                        [attr.aria-expanded]="!isCollapsed3" aria-controls="collapseExample" (click)="dropdown3()"
+                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColorPrivacy"
+                        [attr.aria-expanded]="!isCollapsedPrivacy" aria-controls="collapseExample" (click)="dropdownPrivacy()"
                         class="drop">
-                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColor3"
-                        [attr.aria-expanded]="!isCollapsed3" aria-controls="collapseExample" (click)="dropdown3()"
+                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColorPrivacy"
+                        [attr.aria-expanded]="isCollapsedPrivacy" aria-controls="collapseExample" (click)="dropdownPrivacy()"
                         class="drop">
                 </div>
-                <div id="collapseExample" [ngbCollapse]="isCollapsed3">
+                <div id="collapseExample" [ngbCollapse]="isCollapsedPrivacy">
                     <div class="card">
                         <div class="card-body">
                             <p *ngIf="!textArea_privacy"> {{data.privacy}}</p>
@@ -105,16 +105,16 @@
             </div>
             <div class="container">
                 <div class="box">
-                    <p class="text" [style.color]="changeColor4 ? '#018A83' : '#707070'">{{'About_Us'| translate}}</p>
+                    <p class="text" [style.color]="changeColorAbout ? '#018A83' : '#707070'">{{'About_Us'| translate}}</p>
                     <img src="../../../assets/images/edit.svg" class="edit">
-                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColor4"
-                        [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseExample" (click)="dropdown4()"
+                    <img src="../../../assets/images/icons8-down-arrow-32.png" *ngIf="!changeColorAbout"
+                        [attr.aria-expanded]="!isCollapsedAbout" aria-controls="collapseExample" (click)="dropdownAbout()"
                         class="drop">
-                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColor4"
-                        [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseExample" (click)="dropdown4()"
+                    <img src="../../../assets/images/icons8-up-arrow-32.png" *ngIf="changeColorAbout"
+                        [attr.aria-expanded]="isCollapsedAbout" aria-controls="collapseExample" (click)="dropdownAbout()"
                         class="drop">
                 </div>
-                <div id="collapseExample" [ngbCollapse]="isCollapsed4">
+                <div id="collapseExample" [ngbCollapse]="isCollapsedAbout">
                     <div class="card">
                         <div class="card-body">
                         </div>

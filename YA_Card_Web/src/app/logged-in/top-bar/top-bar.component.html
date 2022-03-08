@@ -1,6 +1,6 @@
 <div class="top-bar-container">
     <a class="back" *ngIf="backButton" [style.display]="!backButton ? 'transparent' : 'inline-flex'" role="button">
-        <div class="back-button" (click)="changeView()"></div>
+        <div class="back-button" (click)="changeView()" routerLink="../"></div>
     </a>
 
     <div class="name">{{displayName}}</div>

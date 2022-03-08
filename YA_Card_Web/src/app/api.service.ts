@@ -86,4 +86,6 @@ export class ApiService {
     return this.http.get<GroupsMember[]>("/assets/data/members.json")
   }
 
+  
+
 }

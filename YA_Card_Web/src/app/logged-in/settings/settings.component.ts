@@ -10,64 +10,68 @@ import { Component, OnInit } from '@angular/core';
 export class SettingsComponent implements OnInit {
 
   option='Settings';
-  tableData: any;
+  settingsData: any;
   constructor(private settingService : SettingsService) { }
- changeColor:boolean=false;
- changeColor2:boolean=false;
- changeColor3:boolean=false;
- changeColor4:boolean=false;
 
+ changeColorQr:boolean=false;
+ changeColorTerms:boolean=false;
+ changeColorPrivacy:boolean=false;
+ changeColorAbout:boolean=false;
+
+ public isCollapsedQr = true;
+  public isCollapsedTerms = true;
+  public isCollapsedPrivacy = true;
+  public isCollapsedAbout = true;
+
+  timer:boolean=true;
+  
+ textArea_terms:boolean=false;
+ textArea_privacy:boolean=false;
+  
   ngOnInit(): void {
     this.settingService.getSettingsData()
-        .subscribe(data => this.tableData = data);
+        .subscribe(data => this.settingsData = data);
   }
 
-  public isCollapsed = true;
-  public isCollapsed2 = true;
-  public isCollapsed3 = true;
-  public isCollapsed4 = true;
-  dropdown(){
-    this.isCollapsed = !this.isCollapsed;
-    this.changeColor = !this.changeColor;
+  
+  dropdownQr(){
+    this.isCollapsedQr = !this.isCollapsedQr;
+    this.changeColorQr = !this.changeColorQr;
    
   }
 
-  dropdown2(){
-    this.isCollapsed2 = !this.isCollapsed2;
-    this.changeColor2 = !this.changeColor2;
+  dropdownTerms(){
+    this.isCollapsedTerms = !this.isCollapsedTerms;
+    this.changeColorTerms = !this.changeColorTerms;
    
   }
-  dropdown3(){
-    this.isCollapsed3 = !this.isCollapsed3;
-    this.changeColor3 = !this.changeColor3;
+  dropdownPrivacy(){
+    this.isCollapsedPrivacy = !this.isCollapsedPrivacy;
+    this.changeColorPrivacy = !this.changeColorPrivacy;
    
   }
-  dropdown4(){
-    this.isCollapsed4 = !this.isCollapsed4;
-    this.changeColor4 = !this.changeColor4;
+  dropdownAbout(){
+    this.isCollapsedAbout = !this.isCollapsedAbout;
+    this.changeColorAbout = !this.changeColorAbout;
    
   }
-  timer:boolean=true;
+  
  editTimer(){
    this.timer=false;
+ }
+ editTerms(){
+  this.textArea_terms = true
+ }
+ editPrivacy(){
+  this.textArea_privacy = true
  }
 
  saveTimer(){
    this.timer=true;
  }
 
- textArea_terms:boolean=false;
- editTerms(){
-  this.textArea_terms = true
- }
-
  saveTerms(){
    this.textArea_terms = false;
- }
-
- textArea_privacy:boolean=false;
- editPrivacy(){
-  this.textArea_privacy = true
  }
 
  savePrivacy(){
