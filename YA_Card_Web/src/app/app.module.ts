@@ -32,8 +32,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { RequestInterceptor } from './api-services/request-interceptor.service';
 import {MatButtonToggleModule} from '@angular/material/button-toggle'; 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { SubgroupsComponent } from './logged-in/subgroups/subgroups.component';
-import { GroupDetailComponent } from './logged-in/group-detail/group-detail.component';
+import { SubgroupsComponent } from './logged-in/groups/subgroups/subgroups.component';
+import { GroupDetailComponent } from './logged-in/groups/group-detail/group-detail.component';
 import { ListComponent } from './logged-in/groups/list/list.component';
 
 export function createTranslateLoader(http: HttpClient) {

@@ -1,6 +1,6 @@
-import { GroupDetailComponent } from './logged-in/group-detail/group-detail.component';
+import { GroupDetailComponent } from './logged-in/groups/group-detail/group-detail.component';
 import { ListComponent } from './logged-in/groups/list/list.component';
-import { SubgroupsComponent } from './logged-in/subgroups/subgroups.component';
+import { SubgroupsComponent } from './logged-in/groups/subgroups/subgroups.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ForgotPasswordComponent } from './signIn/forgot-password/forgot-password.component';
@@ -30,6 +30,7 @@ const routes: Routes = [
   {path:'Groups', component:GroupsComponent,
 children:[
   {path:'detail/:id',component:GroupDetailComponent},
+  {path:'subgroups/:id',component:SubgroupsComponent},
 {
   path:'list',component:ListComponent,
 },

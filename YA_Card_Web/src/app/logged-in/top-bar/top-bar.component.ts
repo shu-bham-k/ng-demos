@@ -1,4 +1,5 @@
 import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-top-bar',
@@ -15,9 +16,9 @@ export class TopBarComponent implements OnInit
   changeView()
   {
     this.show.emit(!this.backButton);
-    this.backButton=!this.backButton;
+    this.location.back();
   }
-  constructor() { }
+  constructor(private location: Location) { }
 test:any
   ngOnInit(): void 
   {

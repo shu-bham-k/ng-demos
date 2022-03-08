@@ -2,8 +2,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GroupsMember } from 'src/assets/data/table-data';
-import { ApiService } from '../../api.service';
-import { GroupsService } from '../groups/groups.service';
+import { ApiService } from '../../../api.service';
+import { GroupsService } from '../groups.service';
 
 @Component({
   selector: 'app-group-detail',
@@ -15,6 +15,7 @@ export class GroupDetailComponent implements OnInit {
   result: any;
   members:any;
   showGroupMembers: boolean =true;
+  hero: any;
   constructor(public dataService:GroupsService , public apiService:ApiService,private modalService: NgbModal,public router:Router, private route: ActivatedRoute) { }
 
   option='Jack Group';
@@ -27,9 +28,15 @@ public id:any;
         .subscribe(data => this.members = data);
 
 
-  const id = parseInt(this.route.snapshot.queryParams['id']);
-  this.id = id;
+  this.getId();
   
+  }
+
+  getId(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    // this.dataService.getHero(id)
+    //   .subscribe(hero => this.hero = hero);
+    console.log(id)
   }
   
   changeColor:boolean=false;

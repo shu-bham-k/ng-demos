@@ -1,6 +1,7 @@
 import { ApiService } from 'src/app/api.service';
-import { GroupsService } from './../groups/groups.service';
+import { GroupsService } from '../groups.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-subgroups',
@@ -10,9 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class SubgroupsComponent implements OnInit {
   result: any;
   members:any;
-  constructor(public dataService:GroupsService , public apiService:ApiService) { }
+  constructor(public dataService:GroupsService , public apiService:ApiService,private route: ActivatedRoute) { }
 
-  option='Groups';
+  option='Subgroups';
 
   ngOnInit(): void {
     this.dataService.getUsers()
@@ -20,8 +21,16 @@ export class SubgroupsComponent implements OnInit {
 
    this.apiService.getMembers()
         .subscribe(data => this.members = data);
+
+  this.getId()
   }
 
+  getId(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    // this.dataService.getHero(id)
+    //   .subscribe(hero => this.hero = hero);
+    console.log(id)
+  }
   changeColor:boolean=false;
   public isCollapsed = true;
   dropdown(){

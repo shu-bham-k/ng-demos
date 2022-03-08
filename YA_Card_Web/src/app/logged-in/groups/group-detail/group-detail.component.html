@@ -72,7 +72,7 @@
                         <td>{{data.totalMembers}}</td>
                         <td>{{data.totalSubgroup}}</td>
                         <td>
-                            <div class="eye" (click)="subgroup()"></div>
+                            <div class="eye" routerLink="../../subgroups/{{data.sno}}"></div>
                             <div class="delete1"  (click)="open(content,i)"></div>
                         </td>
                     </ng-container>
@@ -84,7 +84,7 @@
                         <td>{{data.totalMembers}}</td>
                         <td>{{data.totalSubgroup}}</td>
                         <td>
-                            <div class="eye" (click)="subgroup()"></div>
+                            <div class="eye" routerLink="../../subgroups/{{data.sno}}"></div>
                             <div class="delete1"  (click)="open(content,i)"></div>
                         </td>
                     </ng-container>
@@ -178,6 +178,6 @@
     </div>
 </ng-template>
 
- <ng-container *ngIf="detail==false">
+ <!-- <ng-container *ngIf="detail==false">
     <app-subgroups></app-subgroups>
-</ng-container> 
+</ng-container>  -->
